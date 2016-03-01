@@ -1,7 +1,5 @@
 <?php
-namespace classes;
-
-class Validations{
+class validation{
 	function __construct()
 	{
 	}
@@ -9,7 +7,6 @@ class Validations{
 	{
 		(bool)$status = true;
 		(int)$newNumber = str_replace(' ', '', $number);
-
 		if($newNumber == null)
 		{
 			$status = false;
@@ -25,13 +22,12 @@ class Validations{
 				$status = false;
 			}
 		}
-
 		return $status;
 	}
 	public function character($value = null, $length = null)
 	{
 		(bool)$status = true;
-		if (!ctype_alpha($value))
+		if (!preg_match("/^[a-zA-ZÆØÅæøå]+$/i", $value))
 		{
 			$status = false;
 		}

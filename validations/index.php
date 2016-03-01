@@ -2,13 +2,11 @@
 //the path to the class
 //require_once('classes/validations.php');
 spl_autoload_register(function ($class) {
-    include $class . '.php';
+    include 'class/' . $class . '.php';
 });
-use classes\Validations;
-
 
 //instance of the class
-$validator = new Validations();
+$validator = new validation();
 
 //validate only number from 0-9 and it will also handle spaces.
 //@param1 = input
