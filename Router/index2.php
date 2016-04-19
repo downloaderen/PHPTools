@@ -16,7 +16,6 @@ $router = new Router();
 $router->Folder = 'pages';
 $router->DefaultPage = 'home';
 $router->PredefinedPages = array(
-    'home' => 'home',
     'something' => 'test',
     'dude' => 'subfolder/subsite'
 );
