@@ -1,1 +1,3 @@
-<p>Test side</p>
+<?php
+
+    echo 'Test side';

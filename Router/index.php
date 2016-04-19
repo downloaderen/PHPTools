@@ -9,7 +9,7 @@
 ob_start();
 
 spl_autoload_register(function ($class) {
-    require_once '\\classes\\'. $class . '.php';
+    require_once dirname(__FILE__) . '/classes/'. $class . '.php';
 });
 
 $router = new Router();
@@ -34,7 +34,11 @@ $router->init();
         </nav>
     </header>
     <article>
-        <?= $router->getContent(); ?>
+        <?php
+            if($router->getFilePath() != null) {
+                include_once($router->getFilePath());
+            }
+        ?>
     </article>
     <footer>
     </footer>
